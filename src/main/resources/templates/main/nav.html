@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5" lang="en">
+<nav th:fragment="main_navFragment">
+    <!-- 로그인 실패시 alert에 출력하기위함-->
+    <input type="hidden" id="loginFail" th:value="${param.error}" value="">
+    <div class="nav_content">
+        <div class="sidebtn_box">
+            <div class="slidebtn sidebtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="scrollup sidebtn">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+            <div class="scrolldown sidebtn">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div sec:authorize="hasRole('ROLE_ADMIN')" class="sidebtn adminbtn" onclick="location.href='/admin/main'">
+                <i class="fas fa-cog"></i>
+            </div>
+        </div>
+
+
+        <form action = "/main/login" sec:authorize="isAnonymous()" class="login_form" method="POST" onsubmit="return sendit()">
+            <div class="login_inputs">
+                <input type="text" name="loginId" placeholder="ID">
+                <input type="password" name="password" placeholder="PW">
+            </div>
+            <div class="login_join_btn_box">
+                <input type="submit" class="loginbtn l_jbtn" value="LOGIN">
+                <input type="button" class="joinbtn l_jbtn" value="JOIN US">
+            </div>
+            <div class="findbtn_box">
+                <input type="button" class="findbtn" value="FIND ID">
+                <input type="button" class="findbtn" value="FIND PW">
+            </div>
+        </form>
+        <div class="rightmenu">
+            <input type="button" class="delivery_check" value="배송조회">
+            <input type="button" class="rightmenubtn" value="쿠폰">
+            <input type="button" class="rightmenubtn" value="이벤트">
+            <input type="button" class="rightmenubtn" value="적립금">
+        </div>
+        <div class="cs_center">
+            <div class="cs_center_caption">CS CENTER</div>
+            <div class="cs_center_phone">010-2270-6149</div>
+            <div class="cs_center_desc">
+                mon-fri / 9:00am - 20:00pm<br>
+                lunch time / 12:00am - 13:00pm<br>
+                sat, sun, holiday off
+            </div>
+        </div>
+        <div class="bank">
+            <div class="line"></div>
+            BANK INFO<br>
+            우리은행: 12345-01-123456<br>
+            예금주:페이지27
+        </div>
+    </div>
+</nav>
+</html>
