@@ -33,6 +33,27 @@
             <input type="radio" id="radio3" name="radio" >
             <input type="radio" id="radio4" name="radio" >
             <input type="radio" id="radio5" name="radio" >
+
+<!--            서버에서 itemIdx 넘겨주기-->
+            <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[0].itemIdx})}" class="first_img">
+                <img th:src="@{/image/etc/main_carousel/main_carousel1.jpg}" src="image/main_carousel/carousel1.jpg" alt="main 캐러셀 이미지1">
+            </a>
+
+            <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[1].itemIdx})}">
+                <img th:src="@{/image/etc/main_carousel/main_carousel2.jpg}" src="image/main_carousel/carousel2.jpg" alt="main 캐러셀 이미지2">
+            </a>
+
+            <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[2].itemIdx})}">
+                <img th:src="@{/image/etc/main_carousel/main_carousel3.jpg}" src="image/main_carousel/carousel3.jpg" alt="main 캐러셀 이미지3">
+            </a>
+
+            <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[3].itemIdx})}">
+                <img th:src="@{/image/etc/main_carousel/main_carousel4.jpg}" src="image/main_carousel/carousel4.jpg" alt="main 캐러셀 이미지4">
+            </a>
+
+            <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[4].itemIdx})}">
+                <img th:src="@{/image/etc/main_carousel/main_carousel5.jpg}" src="image/main_carousel/carousel5.jpg" alt="main 캐러셀 이미지5">
+            </a>
         </div>
     </section>
     <!--nav-->

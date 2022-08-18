@@ -42,17 +42,23 @@ page 27 clone coding (벡엔드 중심)
     <td>
         <img src="https://perfectacle.github.io/2017/08/02/Spring-boot-study-001day/thumb.png" width="100px" />
     </td>
+    <td>
+        <img src="https://dbdb.io/media/logos/h2-logo.svg" width="100px" />
+    </td>
+    <td>
+        <img src="https://user-images.githubusercontent.com/55119239/74632964-ea430000-51a3-11ea-8e7d-a8ecb6402a86.png" width="100px" />
+    </td>
+    <td>
+        <img src="https://blog.kakaocdn.net/dn/eVRvQn/btqEbu9rz8n/k7ea2jKIlA4koHgBVrlrT1/img.png" width="100px" />
+    </td>
   </tr>
   <tr>
     <td><b>Java 11</b></td>
     <td><b>Gradle</b></td>
     <td><b>Spring Boot</b></td>
-
-[comment]: <> (    <td><b>MySQL</b></td>)
-
-[comment]: <> (    <td><b>Srping Data JPA</b></td>)
-
-[comment]: <> (    <td><b>JUnit5 / Mockito</b></td>)
+    <td><b>H2 database</b></td>
+    <td><b>Spring Data JPA</b></td>
+    <td><b>JUnit5 / Mockito</b></td>
   </tr>
 </table>
 
@@ -67,17 +73,36 @@ page 27 clone coding (벡엔드 중심)
 # live server
 spring.devtools.livereload.enabled=true
 
-
 spring.thymeleaf.check-template-location=true
-
 
 # default -> resources/static
 spring.mvc.static-path-pattern=/**
+
+# database configuration
+spring.datasource.url= jdbc:h2:tcp://localhost/~/project
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.driver-class-name=org.h2.Driver
+
+spring.jpa.hibernate.ddl-auto=create
 ```
 
 -----------------------
 
+## 📑 진행상황
+
+* **22-08-18**
+```
+1. db연동 및 설정
+2. 메인 캐러셀 itemIdx 서버에서 넘겨주기(/main/index.html)
+```
+
+---------------
+
+
 ## ❌ 이슈
+
+ 
 
 
 
