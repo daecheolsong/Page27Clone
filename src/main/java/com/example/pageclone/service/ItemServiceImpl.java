@@ -1,6 +1,7 @@
 package com.example.pageclone.service;
 
 import com.example.pageclone.domain.Item;
+import com.example.pageclone.dto.WeeklyBestDto;
 import com.example.pageclone.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -40,5 +41,10 @@ public class ItemServiceImpl implements ItemService{
         mainCarouselList.add(fifth);
 
         return mainCarouselList;
+    }
+
+    public List<WeeklyBestDto> getOuterWeeklyBestItem() {
+
+        return itemRepository.findWeeklyBestItem("outer", "jacket", true);
     }
 }

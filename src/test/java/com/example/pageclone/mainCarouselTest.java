@@ -1,6 +1,7 @@
 package com.example.pageclone;
 
 import com.example.pageclone.domain.Item;
+import com.example.pageclone.dto.WeeklyBestDto;
 import com.example.pageclone.repository.ItemRepository;
 import com.example.pageclone.service.ItemServiceImpl;
 import org.assertj.core.api.Assertions;
@@ -19,12 +20,19 @@ public class mainCarouselTest {
     ItemServiceImpl itemService;
 
     @Test
-    public void findItem() {
+    public void findMainCarouselItem() {
         List<Item> mainCarouselItemList = itemService.getMainCarouselItemList();
         for (Item item : mainCarouselItemList) {
             System.out.println(item);
         }
         Assertions.assertThat(mainCarouselItemList.size()).isEqualTo(5);
 
+    }
+
+    @Test
+    public void findWeeklyBestOuter() {
+        List<WeeklyBestDto> outerWeeklyBestItem = itemService.getOuterWeeklyBestItem();
+
+        Assertions.assertThat(outerWeeklyBestItem.get(0).getPrice()).isEqualTo(27000);
     }
 }

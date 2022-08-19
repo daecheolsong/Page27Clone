@@ -54,7 +54,71 @@
             <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[4].itemIdx})}">
                 <img th:src="@{/image/etc/main_carousel/main_carousel5.jpg}" src="image/main_carousel/carousel5.jpg" alt="main 캐러셀 이미지5">
             </a>
+
+            <div class="manualbtns">
+<!--                radio 버튼 클릭영역 manualbtn 확장-->
+                <label for="radio1" class="manualbtn"></label>
+                <label for="radio2" class="manualbtn"></label>
+                <label for="radio3" class="manualbtn"></label>
+                <label for="radio4" class="manualbtn"></label>
+                <label for="radio5" class="manualbtn"></label>
+            </div>
+            <div class="arrowbtns">
+                <i class="fas fa-chevron-left"></i>
+                <i class="fas fa-chevron-right"></i>
+            </div>
         </div>
+
+        <div class="main_bottom">
+            <a th:href="@{#}"><img src="/image/etc/bestitem.JPG" alt="best item"></a>
+            <a th:href="@{/main/register}"><img th:src="@{/image/etc/joinus.JPG}" alt="join us"></a>
+            <div class="main_bottom_board">
+                <div class="notice">
+                    <a th:href="@{#}" id="more">+</a>
+                    <a th:href="@{#}">+ 사이즈 측정 방법</a>
+                    <a th:href="@{#}">+ 회원 가입 시 적립금 및 예치금 안내</a>
+                    <a th:href="@{#}">+ 배송 / 교환 및 반품 절차</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="weeklybest">
+            <div class="weeklybest_caption">
+                WEEKELY BEST
+            </div>
+            <div class="weeklybest_container">
+                <div class="weeklybest_menu">
+                    <span class="active">OUTER</span>
+                    <span>TOP</span>
+                    <span>SHIRTS</span>
+                    <span>KNIT</span>
+                    <span>BOTTOM</span>
+                    <span>SHOES</span>
+                </div>
+                <div class="weeklybest_carousel">
+                    <div class="w_carousel_mdpick">
+                        <div class="mdpick_caption"><b>MD's</b> PICK</div>
+                        <div class="mdpick_img">
+                            <a th:href="@{/main/product/{itemIdx}(itemIdx=${outerList[0].itemIdx})}">
+                                <img th:src="@{${outerList[0].imgUrl}}" alt="md's pick"/>
+                            </a>
+                        </div>
+                        <div class="mdpick_name">
+                            <a th:href="@{/main/product/{itemIdx}(itemIdx=${outerList[0].itemIdx})}" th:text="${outerList[0].itemName}">로예 나일론 바람막이 집업</a>
+                        </div>
+
+                        <div class="mdpick_info" th:text="${outerList[0].itemInfo}"></div>
+
+                        <div class="mdpick_price">
+                            <b th:text="'\\'+${#numbers.formatInteger(outerList[0].price,0,'COMMA')}"></b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
     </section>
     <!--nav-->
     <nav th:replace="main/nav :: main_navFragment"></nav>

@@ -3,7 +3,9 @@ package com.example.pageclone.repository;
 import com.example.pageclone.domain.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ItemRepository extends JpaRepository<Item, Long> {
+
+public interface ItemRepository extends JpaRepository<Item, Long>, ItemRepositoryCustom{
 
     Item findByItemIdxAndColorAndRep(Long itemIdx, String color, boolean rep);
+
 }

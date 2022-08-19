@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 
 @Component
 @RequiredArgsConstructor
-public class MainCarouselInit {
+public class IndexInit {
 
     private final ItemRepository itemRepository;
 
@@ -40,11 +40,23 @@ public class MainCarouselInit {
         item5.setColor("아이보리");
         item5.setRep(true);
 
+        // weeklyBestItem-> mdPick1
+        Item weeklyBestItem = new Item();
+        weeklyBestItem.setItemIdx(99l);
+        weeklyBestItem.setRep(true);
+        weeklyBestItem.setFirstCategory("outer");
+        weeklyBestItem.setSecondCategory("jacket");
+        weeklyBestItem.setItemName("로예 나일론 바람막이 집업");
+        weeklyBestItem.setPrice(27000);
+        weeklyBestItem.setItemInfo("10컬러의 다양한 색감들과 가격대비 퀄리티 좋은 제품으로 간절기 시즌에 가볍고");
+        weeklyBestItem.setImgUrl("/image/etc/main_weeklybest/md_pick1.jpg");
         itemRepository.save(item);
         itemRepository.save(item2);
         itemRepository.save(item3);
         itemRepository.save(item4);
         itemRepository.save(item5);
+
+        itemRepository.save(weeklyBestItem);
 
 
     }
