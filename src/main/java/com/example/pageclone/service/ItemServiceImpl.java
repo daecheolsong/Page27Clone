@@ -43,8 +43,42 @@ public class ItemServiceImpl implements ItemService{
         return mainCarouselList;
     }
 
+    // main carousel weekly best item
+
     public List<WeeklyBestDto> getOuterWeeklyBestItem() {
 
         return itemRepository.findWeeklyBestItem("outer", "jacket", true);
+    }
+
+    public List<WeeklyBestDto> getSleeveWeeklyBestItem() {
+
+        return itemRepository.findWeeklyBestItem("top", "sleeve", true);
+    }
+
+    public List<WeeklyBestDto> getShirtsWeeklyBestItem() {
+        return itemRepository.findWeeklyBestItem("shirts", "basic", true);
+
+    }
+
+    public List<WeeklyBestDto> getShoesWeeklyBestItem() {
+        return itemRepository.findWeeklyBestItem("shoes", "shoes", true);
+    }
+
+    public List<WeeklyBestDto> getTopKnitWeeklyBestItem() {
+        return itemRepository.findWeeklyBestItem("top", "knit", true);
+    }
+
+    public List<WeeklyBestDto> getBottomWeeklyBestItem() {
+        return itemRepository.findWeeklyBestItem("bottom", "cotton", true);
+    }
+
+    public List<WeeklyBestDto> getNewArrivalItem() {
+        List<WeeklyBestDto> newArrivalList = itemRepository.findNewArrivalItem("outer", "jacket", true);
+
+        for (int i = 0; i < newArrivalList.size(); i++) {
+            newArrivalList.get(i).setMileage(newArrivalList.get(i).getPrice() / 100);
+        }
+
+        return newArrivalList;
     }
 }

@@ -20,111 +20,280 @@
     <script src="/js/main/nav.js"></script>
 </head>
 <body>
-    <!--header start-->
-    <header th:replace="main/header :: main_headerFragment">
-    </header>
-    <!--header end-->
+<!--header start-->
+<header th:replace="main/header :: main_headerFragment">
+</header>
+<!--header end-->
 
-<!--    section start-->
-    <section>
-        <div class="carousel_container main_top">
-            <input type="radio" id="radio1" name="radio" checked>
-            <input type="radio" id="radio2" name="radio" >
-            <input type="radio" id="radio3" name="radio" >
-            <input type="radio" id="radio4" name="radio" >
-            <input type="radio" id="radio5" name="radio" >
+<!--section-->
+<section>
+    <!--main-->
+    <div class="carousel_container main_top">
+        <input type="radio" id="radio1" name="radio" checked>
+        <input type="radio" id="radio2" name="radio">
+        <input type="radio" id="radio3" name="radio">
+        <input type="radio" id="radio4" name="radio">
+        <input type="radio" id="radio5" name="radio">
 
-<!--            서버에서 itemIdx 넘겨주기-->
-            <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[0].itemIdx})}" class="first_img">
-                <img th:src="@{/image/etc/main_carousel/main_carousel1.jpg}" src="image/main_carousel/carousel1.jpg" alt="main 캐러셀 이미지1">
-            </a>
+        <!--서버로부터 main_carousel 배열 받기 -->
+        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[0].itemIdx})}" class="first_img"><img th:src="@{/image/etc/main_carousel/main_carousel1.jpg}" src="img/main_carousel/carousel1.jpg" alt="메인 캐러샐 이미지1"></a>
+        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[1].itemIdx})}"><img th:src="@{/image/etc/main_carousel/main_carousel2.jpg}" src="img/main_carousel/carousel2.jpg" alt="메인 캐러샐 이미지2"></a>
+        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[2].itemIdx})}"><img th:src="@{/image/etc/main_carousel/main_carousel3.jpg}" src="img/main_carousel/carousel3.jpg" alt="메인 캐러샐 이미지3"></a>
+        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[3].itemIdx})}"><img th:src="@{/image/etc/main_carousel/main_carousel4.jpg}" src="img/main_carousel/carousel4.jpg" alt="메인 캐러샐 이미지4"></a>
+        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[4].itemIdx})}"><img th:src="@{/image/etc/main_carousel/main_carousel5.jpg}" src="img/main_carousel/carousel5.jpg" alt="메인 캐러샐 이미지5"></a>
 
-            <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[1].itemIdx})}">
-                <img th:src="@{/image/etc/main_carousel/main_carousel2.jpg}" src="image/main_carousel/carousel2.jpg" alt="main 캐러셀 이미지2">
-            </a>
 
-            <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[2].itemIdx})}">
-                <img th:src="@{/image/etc/main_carousel/main_carousel3.jpg}" src="image/main_carousel/carousel3.jpg" alt="main 캐러셀 이미지3">
-            </a>
-
-            <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[3].itemIdx})}">
-                <img th:src="@{/image/etc/main_carousel/main_carousel4.jpg}" src="image/main_carousel/carousel4.jpg" alt="main 캐러셀 이미지4">
-            </a>
-
-            <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${mainCarousel[4].itemIdx})}">
-                <img th:src="@{/image/etc/main_carousel/main_carousel5.jpg}" src="image/main_carousel/carousel5.jpg" alt="main 캐러셀 이미지5">
-            </a>
-
-            <div class="manualbtns">
-<!--                radio 버튼 클릭영역 manualbtn 확장-->
-                <label for="radio1" class="manualbtn"></label>
-                <label for="radio2" class="manualbtn"></label>
-                <label for="radio3" class="manualbtn"></label>
-                <label for="radio4" class="manualbtn"></label>
-                <label for="radio5" class="manualbtn"></label>
-            </div>
-            <div class="arrowbtns">
-                <i class="fas fa-chevron-left"></i>
-                <i class="fas fa-chevron-right"></i>
-            </div>
+        <div class="manualbtns">
+            <label for="radio1" class="manualbtn"></label>
+            <label for="radio2" class="manualbtn"></label>
+            <label for="radio3" class="manualbtn"></label>
+            <label for="radio4" class="manualbtn"></label>
+            <label for="radio5" class="manualbtn"></label>
+        </div>
+        <div class="arrowbtns">
+            <i class="fas fa-chevron-left"></i>
+            <i class="fas fa-chevron-right"></i>
         </div>
 
-        <div class="main_bottom">
-            <a th:href="@{#}"><img src="/image/etc/bestitem.JPG" alt="best item"></a>
-            <a th:href="@{/main/register}"><img th:src="@{/image/etc/joinus.JPG}" alt="join us"></a>
-            <div class="main_bottom_board">
-                <div class="notice">
-                    <a th:href="@{#}" id="more">+</a>
-                    <a th:href="@{#}">+ 사이즈 측정 방법</a>
-                    <a th:href="@{#}">+ 회원 가입 시 적립금 및 예치금 안내</a>
-                    <a th:href="@{#}">+ 배송 / 교환 및 반품 절차</a>
-                </div>
+    </div>
+    <div class="main_bottom">
+        <a href="#"><img src="/image/etc/bestitem.JPG" alt="best item"></a>
+        <a href="/main/register"><img src="/image/etc/joinus.JPG" alt="join us"></a>
+        <div class="main_bottom_board">
+            <img src="/image/etc/qanda.JPG" alt="Q and A">
+            <div class="notice">
+                <a href="#" id="more">+</a>
+                <a href="#">+ 사이즈 측정 방법</a>
+                <a href="#">+ 회원 가입 시 적립금 및 예치금 안내</a>
+                <a href="#">+ 배송 / 교환 및 반품 절차</a>
             </div>
         </div>
-
-        <div class="weeklybest">
-            <div class="weeklybest_caption">
-                WEEKELY BEST
+    </div>
+    <!--weeklybest-->
+    <div class="weeklybest">
+        <div class="weeklybest_caption">
+            WEEKLY BEST
+        </div>
+        <div class="weeklybest_container">
+            <div class="weeklybest_menu">
+                <span class="active">OUTER</span>
+                <span>TOP</span>
+                <span>SHIRTS</span>
+                <span>KNIT</span>
+                <span>BOTTOM</span>
+                <span>SHOES</span>
             </div>
-            <div class="weeklybest_container">
-                <div class="weeklybest_menu">
-                    <span class="active">OUTER</span>
-                    <span>TOP</span>
-                    <span>SHIRTS</span>
-                    <span>KNIT</span>
-                    <span>BOTTOM</span>
-                    <span>SHOES</span>
+            <div class="weeklybest_carousel">
+                <div class="w_carousel_mdpick">
+                    <div class="mdpick_caption"><b>MD's</b> PICK</div>
+                    <div class="mdpick_img">
+                        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${outerList[0].itemIdx})}">
+                            <img th:src="@{${outerList[0].imgUrl}}" src="./img/main_weeklybest/md_pick1.JPG" alt="md's pick">
+                        </a>
+                    </div>
+                    <div class="mdpick_name"><a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${outerList[0].itemIdx})}" th:text="${outerList[0].itemName}">로예 나일론 바람막이 집업</a></div>
+                    <div class="mdpick_info" th:text="${outerList[0].itemInfo}">10컬러의 다양한 색감들과 가격대비 퀄리티 좋은 제품으로 간절기시즌에 가볍고</div>
+                    <div class="mdpick_price"><b th:text="'₩'+${#numbers.formatInteger(outerList[0].price, 0, 'COMMA')}">₩27,000</b></div>
                 </div>
-                <div class="weeklybest_carousel">
-                    <div class="w_carousel_mdpick">
-                        <div class="mdpick_caption"><b>MD's</b> PICK</div>
-                        <div class="mdpick_img">
-                            <a th:href="@{/main/product/{itemIdx}(itemIdx=${outerList[0].itemIdx})}">
-                                <img th:src="@{${outerList[0].imgUrl}}" alt="md's pick"/>
-                            </a>
-                        </div>
-                        <div class="mdpick_name">
-                            <a th:href="@{/main/product/{itemIdx}(itemIdx=${outerList[0].itemIdx})}" th:text="${outerList[0].itemName}">로예 나일론 바람막이 집업</a>
-                        </div>
-
-                        <div class="mdpick_info" th:text="${outerList[0].itemInfo}"></div>
-
-                        <div class="mdpick_price">
-                            <b th:text="'\\'+${#numbers.formatInteger(outerList[0].price,0,'COMMA')}"></b>
-                        </div>
+                <div class="w_carousel_item_box">
+                    <div class="w_carousel_item" th:each="item, i : ${outerList}" th:if="${i.index} >= 1">
+                        <img th:src="@{${item.imgUrl}}" src="./img/main_weeklybest/main_weeklybest1.JPG" alt="상품사진">
+                        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${item.itemIdx})}">
+                            <div class="w_carousel_item_desc">
+                                <div class="w_carousel_item_name" th:text="${item.itemName}">오디너리 워싱 후드 자켓</div>
+                                <div class="w_carousel_item_price"><b th:text="'₩'+${#numbers.formatInteger(item.price, 0, 'COMMA')}">₩39,900</b></div>
+                                <div class="w_carouesl_item_button">
+                                    <button class="buyitnowbtn hoverbtn" onclick="location.href=''" th:onclick="'location.href=\''+ @{/main/product/{itemIdx}(itemIdx=${item.itemIdx})} + '\''">BUY IT NOW</button>
+                                    <button class="basketbtn hoverbtn"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
+            <div class="weeklybest_carousel">
+                <div class="w_carousel_mdpick">
+                    <div class="mdpick_caption"><b>MD's</b> PICK</div>
+                    <div class="mdpick_img">
+                        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${topList[0].itemIdx})}">
+                            <img th:src="@{${topList[0].imgUrl}}" src="./img/main_weeklybest/md_pick1.JPG" alt="md's pick">
+                        </a>
+                    </div>
+                    <div class="mdpick_name"><a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${topList[0].itemIdx})}" th:text="${topList[0].itemName}">로예 나일론 바람막이 집업</a></div>
+                    <div class="mdpick_info" th:text="${topList[0].itemInfo}">10컬러의 다양한 색감들과 가격대비 퀄리티 좋은 제품으로 간절기시즌에 가볍고</div>
+                    <div class="mdpick_price"><b th:text="'₩'+${#numbers.formatInteger(topList[0].price, 0, 'COMMA')}">₩27,000</b></div>
+                </div>
+                <div class="w_carousel_item_box">
+                    <div class="w_carousel_item" th:each="item, i : ${topList}" th:if="${i.index} >= 1">
+                        <img th:src="@{${item.imgUrl}}" src="./img/main_weeklybest/main_weeklybest1.JPG" alt="상품사진">
+                        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${item.itemIdx})}">
+                            <div class="w_carousel_item_desc">
+                                <div class="w_carousel_item_name" th:text="${item.itemName}">오디너리 워싱 후드 자켓</div>
+                                <div class="w_carousel_item_price"><b th:text="'₩'+${#numbers.formatInteger(item.price, 0, 'COMMA')}">₩39,900</b></div>
+                                <div class="w_carouesl_item_button">
+                                    <button class="buyitnowbtn hoverbtn" onclick="location.href=''" th:onclick="'location.href=\''+ @{/main/product/{itemIdx}(itemIdx=${item.itemIdx})} + '\''">BUY IT NOW</button>
+                                    <button class="basketbtn hoverbtn"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="weeklybest_carousel">
+                <div class="w_carousel_mdpick">
+                    <div class="mdpick_caption"><b>MD's</b> PICK</div>
+                    <div class="mdpick_img">
+                        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${shirtList[0].itemIdx})}">
+                            <img th:src="@{${shirtList[0].imgUrl}}" src="./img/main_weeklybest/md_pick1.JPG" alt="md's pick">
+                        </a>
+                    </div>
+                    <div class="mdpick_name"><a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${shirtList[0].itemIdx})}" th:text="${shirtList[0].itemName}">로예 나일론 바람막이 집업</a></div>
+                    <div class="mdpick_info" th:text="${shirtList[0].itemInfo}">10컬러의 다양한 색감들과 가격대비 퀄리티 좋은 제품으로 간절기시즌에 가볍고</div>
+                    <div class="mdpick_price"><b th:text="'₩'+${#numbers.formatInteger(shirtList[0].price, 0, 'COMMA')}">₩27,000</b></div>
+                </div>
+                <div class="w_carousel_item_box">
+                    <div class="w_carousel_item" th:each="item, i : ${shirtList}" th:if="${i.index} >= 1">
+                        <img th:src="@{${item.imgUrl}}" src="./img/main_weeklybest/main_weeklybest1.JPG" alt="상품사진">
+                        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${item.itemIdx})}">
+                            <div class="w_carousel_item_desc">
+                                <div class="w_carousel_item_name" th:text="${item.itemName}">오디너리 워싱 후드 자켓</div>
+                                <div class="w_carousel_item_price"><b th:text="'₩'+${#numbers.formatInteger(item.price, 0, 'COMMA')}">₩39,900</b></div>
+                                <div class="w_carouesl_item_button">
+                                    <button class="buyitnowbtn hoverbtn" onclick="location.href=''" th:onclick="'location.href=\''+ @{/main/product/{itemIdx}(itemIdx=${item.itemIdx})} + '\''">BUY IT NOW</button>
+                                    <button class="basketbtn hoverbtn"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="weeklybest_carousel">
+                <div class="w_carousel_mdpick">
+                    <div class="mdpick_caption"><b>MD's</b> PICK</div>
+                    <div class="mdpick_img">
+                        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${knitList[0].itemIdx})}">
+                            <img th:src="@{${knitList[0].imgUrl}}" src="./img/main_weeklybest/md_pick1.JPG" alt="md's pick">
+                        </a>
+                    </div>
+                    <div class="mdpick_name"><a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${knitList[0].itemIdx})}" th:text="${knitList[0].itemName}">로예 나일론 바람막이 집업</a></div>
+                    <div class="mdpick_info" th:text="${knitList[0].itemInfo}">10컬러의 다양한 색감들과 가격대비 퀄리티 좋은 제품으로 간절기시즌에 가볍고</div>
+                    <div class="mdpick_price"><b th:text="'₩'+${#numbers.formatInteger(knitList[0].price, 0, 'COMMA')}">₩27,000</b></div>
+                </div>
+                <div class="w_carousel_item_box">
+                    <div class="w_carousel_item" th:each="item, i : ${knitList}" th:if="${i.index} >= 1">
+                        <img th:src="@{${item.imgUrl}}" src="./img/main_weeklybest/main_weeklybest1.JPG" alt="상품사진">
+                        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${item.itemIdx})}">
+                            <div class="w_carousel_item_desc">
+                                <div class="w_carousel_item_name" th:text="${item.itemName}">오디너리 워싱 후드 자켓</div>
+                                <div class="w_carousel_item_price"><b th:text="'₩'+${#numbers.formatInteger(item.price, 0, 'COMMA')}">₩39,900</b></div>
+                                <div class="w_carouesl_item_button">
+                                    <button class="buyitnowbtn hoverbtn" onclick="location.href=''" th:onclick="'location.href=\''+ @{/main/product/{itemIdx}(itemIdx=${item.itemIdx})} + '\''">BUY IT NOW</button>
+                                    <button class="basketbtn hoverbtn"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="weeklybest_carousel">
+                <div class="w_carousel_mdpick">
+                    <div class="mdpick_caption"><b>MD's</b> PICK</div>
+                    <div class="mdpick_img">
+                        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${bottomList[0].itemIdx})}">
+                            <img th:src="@{${bottomList[0].imgUrl}}" src="./img/main_weeklybest/md_pick1.JPG" alt="md's pick">
+                        </a>
+                    </div>
+                    <div class="mdpick_name"><a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${bottomList[0].itemIdx})}" th:text="${bottomList[0].itemName}">로예 나일론 바람막이 집업</a></div>
+                    <div class="mdpick_info" th:text="${bottomList[0].itemInfo}">10컬러의 다양한 색감들과 가격대비 퀄리티 좋은 제품으로 간절기시즌에 가볍고</div>
+                    <div class="mdpick_price"><b th:text="'₩'+${#numbers.formatInteger(bottomList[0].price, 0, 'COMMA')}">₩27,000</b></div>
+                </div>
+                <div class="w_carousel_item_box">
+                    <div class="w_carousel_item" th:each="item, i : ${bottomList}" th:if="${i.index} >= 1">
+                        <img th:src="@{${item.imgUrl}}" src="./img/main_weeklybest/main_weeklybest1.JPG" alt="상품사진">
+                        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${item.itemIdx})}">
+                            <div class="w_carousel_item_desc">
+                                <div class="w_carousel_item_name" th:text="${item.itemName}">오디너리 워싱 후드 자켓</div>
+                                <div class="w_carousel_item_price"><b th:text="'₩'+${#numbers.formatInteger(item.price, 0, 'COMMA')}">₩39,900</b></div>
+                                <div class="w_carouesl_item_button">
+                                    <button class="buyitnowbtn hoverbtn" onclick="location.href=''" th:onclick="'location.href=\''+ @{/main/product/{itemIdx}(itemIdx=${item.itemIdx})} + '\''">BUY IT NOW</button>
+                                    <button class="basketbtn hoverbtn"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weeklybest_carousel">
+                <div class="w_carousel_mdpick">
+                    <div class="mdpick_caption"><b>MD's</b> PICK</div>
+                    <div class="mdpick_img">
+                        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${shoesList[0].itemIdx})}">
+                            <img th:src="@{${shoesList[0].imgUrl}}" src="./img/main_weeklybest/md_pick1.JPG" alt="md's pick">
+                        </a>
+                    </div>
+                    <div class="mdpick_name"><a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${shoesList[0].itemIdx})}" th:text="${shoesList[0].itemName}">로예 나일론 바람막이 집업</a></div>
+                    <div class="mdpick_info" th:text="${shoesList[0].itemInfo}">10컬러의 다양한 색감들과 가격대비 퀄리티 좋은 제품으로 간절기시즌에 가볍고</div>
+                    <div class="mdpick_price"><b th:text="'₩'+${#numbers.formatInteger(shoesList[0].price, 0, 'COMMA')}">₩27,000</b></div>
+                </div>
+                <div class="w_carousel_item_box">
+                    <div class="w_carousel_item" th:each="item, i : ${shoesList}" th:if="${i.index} >= 1">
+                        <img th:src="@{${item.imgUrl}}" src="./img/main_weeklybest/main_weeklybest1.JPG" alt="상품사진">
+                        <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${item.itemIdx})}">
+                            <div class="w_carousel_item_desc">
+                                <div class="w_carousel_item_name" th:text="${item.itemName}">오디너리 워싱 후드 자켓</div>
+                                <div class="w_carousel_item_price"><b th:text="'₩'+${#numbers.formatInteger(item.price, 0, 'COMMA')}">₩39,900</b></div>
+                                <div class="w_carouesl_item_button">
+                                    <button class="buyitnowbtn hoverbtn" onclick="location.href=''" th:onclick="'location.href=\''+ @{/main/product/{itemIdx}(itemIdx=${item.itemIdx})} + '\''">BUY IT NOW</button>
+                                    <button class="basketbtn hoverbtn"><i class="fas fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
 
+    </div>
+    <!--weeklybest end-->
+    <!--newarrivals-->
+    <div class="newarrivals">
+        <div class="newarrivals_caption">
+            NEW ARRIVALS
+            <div class="newarrivals_caption_desc">더 좋은 제품으로 찾아온 신상품, 만나보세요</div>
+        </div>
+        <div class="newarrivals_container">
+            <div class="newarrivals_item" th:each="item:${newarrivals}">
+                <div class="newarrivals_item_img">
+                    <a href="#" th:href="@{/main/product/{itemIdx}(itemIdx=${item.itemIdx})}"><img th:src="@{${item.imgUrl}}" src="img/main_newarrivals/newarrival1.JPG" alt="상품사진"></a>
+                    <div class="newarrivals_item_hover">
+                        <div class="quickview hoveritem"><i class="far fa-clone" onclick="location.href=''" th:onclick="'location.href=\''+ @{/main/product/{itemIdx}(itemIdx=${item.itemIdx})} + '\''"></i></div>
+                        <div class="backet hoveritem"><i class="fas fa-shopping-basket"></i></div>
+                        <div class="priview hoveritem"><i class="far fa-sticky-note"></i></div>
+                    </div>
+                </div>
+                <div class="newarrivals_item_name" th:text="${item.itemName}">1+1 콕스 텐션 반팔티셔츠(15color)-주문폭주-</div>
+                <hr/>
+                <div class="newarrivals_item_price" th:text="'₩'+${#numbers.formatInteger(item.price, 0, 'COMMA')}"><b>₩17,000</b></div>
+                <div class="newarrivals_item_milage" th:text="${item.mileage}+'원(1%)'">170원(1%)</div>
+            </div>
+        </div>
+    </div>
+    <!--newarrivals end-->
+</section>
 
+<!--nav-->
+<nav th:replace="main/nav :: main_navFragment">
+</nav>
 
-    </section>
-    <!--nav-->
-    <nav th:replace="main/nav :: main_navFragment"></nav>
-
-    <!--footer-->
-    <footer th:replace="main/footer :: main_footerFragment"></footer>
+<!--footer-->
+<footer th:replace="main/footer :: main_footerFragment">
+</footer>
 
 </body>
 </html>

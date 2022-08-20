@@ -39,4 +39,25 @@ public class ItemRepositoryImpl implements ItemRepositoryCustom {
 
         return content;
     }
+
+    @Override
+    public List<WeeklyBestDto> findNewArrivalItem(String firstCategory, String secondCategory, boolean rep) {
+        QueryResults<WeeklyBestDto> results = queryFactory
+                .selectDistinct(new QWeeklyBestDto(
+                        QItem.item.itemIdx,
+                        QItem.item.itemName,
+                        QItem.item.price,
+                        QItem.item.imgUrl
+                ))
+                .from(QItem.item)
+                .where(QItem.item.rep.eq(true),
+                        QItem.item.firstCategory.eq(firstCategory),
+                        QItem.item.secondCategory.eq(secondCategory)
+                )
+                .limit(9l)
+                .fetchResults();
+
+        List<WeeklyBestDto> content = results.getResults();
+        return content;
+    }
 }

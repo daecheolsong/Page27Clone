@@ -7,4 +7,5 @@ import java.util.List;
 public interface ItemRepositoryCustom {
 
     List<WeeklyBestDto> findWeeklyBestItem(String firstCategory, String secondCategory, boolean rep);
+    List<WeeklyBestDto> findNewArrivalItem(String firstCategory, String secondCategory, boolean rep);
 }

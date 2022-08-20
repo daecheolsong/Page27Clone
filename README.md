@@ -178,6 +178,22 @@ task cleanGeneatedDir(type: Delete) { // 인텔리제이 annotation processor �
  - WeeklyBestDto로 넘겨줌 
 ```
 
+
+* **22-08-20**
+```
+1. IndexInit 완성(/main/index test data)
+    - weeklyBestDto
+        - weeklyBestOuterItem
+        - weeklyBestShoesItem
+        - weeklyBestSleeveItem
+        - weeklyBestShirtsItem
+        - weeklyBestBottomItem
+        - weeklyBestKnitItem
+2. /main/index 완성
+    - weeklyBestDto 를 통해 조회
+```
+
+
 ---------------
 
 
