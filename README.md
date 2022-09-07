@@ -10,22 +10,6 @@ page 27 clone coding (벡엔드 중심)
 
 <br>
 
-## 👬 팀 소개
-
-<table>
-  <tr>
-    <td>
-        <a href="https://github.com/daecheolsong">
-            <img src="https://mvp.microsoft.com/ko-kr/PublicProfile/Photo/21132" width="100px" />
-        </a>
-    </td>
-  </tr>
-  <tr>
-    <td><b>dcs</b></td>
-  </tr>
-</table>
-
-<br>
 
 ## 🛠 기술 스택
 
